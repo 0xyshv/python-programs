@@ -8,9 +8,9 @@ def factorial(n):
     return result
 
 #using recursion
-def factorial(n):
-    """Returns the factorial of n."""
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
+# def factorial(n):
+#     """Returns the factorial of n."""
+#     if n == 0:
+#         return 1
+#     else:
+#         return n * factorial(n - 1)
