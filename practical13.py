@@ -1,31 +1,13 @@
 def generate_fibonacci(n):
-    """Returns the Fibonacci series up to n terms."""
-    series = []
-    a, b = 0, 1
-    for _ in range(n):
-        series.append(a)
-        a, b = b, a + b
-    return series
+    fibonacci_series = [0, 1]
 
-n = int(input("Enter the number of terms for Fibonacci series: "))
-if n <= 0:
-    print("Please enter a positive integer.")
-else:
-    fibonacci_series = generate_fibonacci(n)
-    print(f"Fibonacci series up to {n} terms: {', '.join(map(str, fibonacci_series))}")
+    while len(fibonacci_series) < n:
+        next_term = fibonacci_series[-1] + fibonacci_series[-2]
+        fibonacci_series.append(next_term)
 
-#using recursion
-# def fibonacci(n):
-#     """Returns the nth term in the Fibonacci series."""
-#     if n <= 1:
-#         return n
-#     else:
-#         return fibonacci(n - 1) + fibonacci(n - 2)
+    return fibonacci_series
 
-# n = int(input("Enter the number of terms for Fibonacci series: "))
-# if n <= 0:
-#     print("Please enter a positive integer.")
-# else:
-#     fibonacci_series = [fibonacci(i) for i in range(n)]
-#     print(f"Fibonacci series up to {n} terms: {', '.join(map(str, fibonacci_series))}")
-
+# Example usage:
+num_terms = 10
+fibonacci_result = generate_fibonacci(num_terms)
+print(f"The Fibonacci series with {num_terms} terms is: {fibonacci_result}")
